@@ -25,6 +25,16 @@ My design rule: **the LLM narrates; deterministic code decides.** Numbers, thres
 
 ## 🚀 Featured work
 
+### [Agentic Data Platform: Governed Analytics over a dbt Lakehouse](https://github.com/kribalaji/agentic-data-platform)
+Business questions in plain English, answered through a governed semantic layer instead of free-form text-to-SQL.
+- **dbt lakehouse** (staging → marts, 38 data tests) that runs on **DuckDB** locally and **BigQuery** in production
+- **Semantic layer**: the LLM returns a structured metric query, and deterministic code compiles the SQL, so "revenue" has one definition
+- **sqlglot guardrails** on the parse tree: read-only, table allowlist, no file access, enforced row limit (16 attack cases blocked)
+- **LangGraph agents** for analytics, **data quality** (duplicates, orphans, freshness, volume anomalies) and **dbt lineage**
+- Execution-accuracy eval against hand-written reference SQL, 35 tests, CI on every pull request
+
+`LangGraph` `dbt` `BigQuery` `DuckDB` `sqlglot` `FastAPI`
+
 ### [Crop Insurance Claims: Agentic AI Platform](https://github.com/kribalaji/crop-insurance-agent)
 A multi-agent system that assesses index-based crop-insurance claims end to end.
 - Weather, Policy, Claim and Advisory agents orchestrated as a **LangGraph** supervisor graph
