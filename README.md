@@ -53,11 +53,11 @@ LangChain examples across Ollama, Gemini, Hugging Face, Cohere and Together AI: 
 
 ## 🛠️ Stack
 
-**GenAI & agents:** LangGraph · LangChain · LlamaIndex · MCP · RAGAS · Gemini · Claude · Ollama · Hugging Face
-**Retrieval:** ChromaDB · FAISS · embeddings · hybrid and advanced retrieval
-**Backend:** Python · FastAPI · Streamlit · uv · pytest
-**Data platform:** BigQuery · Teradata · AWS data services · SQL · Python data pipelines
-**Cloud & MLOps:** Google Cloud (Vertex AI) · AWS (Bedrock, SageMaker) · Docker · Kubernetes
+- **GenAI & agents:** LangGraph · LangChain · LlamaIndex · MCP · RAGAS · Gemini · Claude · Ollama · Hugging Face
+- **Retrieval:** ChromaDB · FAISS · embeddings · hybrid and advanced retrieval
+- **Backend:** Python · FastAPI · Streamlit · uv · pytest
+- **Data platform:** BigQuery · Teradata · AWS data services · SQL · Python data pipelines
+- **Cloud & MLOps:** Google Cloud (Vertex AI) · AWS (Bedrock, SageMaker) · Docker · Kubernetes
 
 ## 🏅 Certifications
 
