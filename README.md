@@ -15,7 +15,8 @@ I design and build **production-grade LLM systems** (multi-agent workflows, RAG 
 
 - **Agentic systems:** LangGraph supervisor graphs, tool-using agents, durable checkpoints, human-in-the-loop approval
 - **Grounded GenAI:** RAG with cited sources, hybrid and advanced retrieval (HyDE, MMR, multi-query), RAGAS evaluation
-- **Agent safety and governance:** prompt-injection defense, PII redaction, deny-by-default tool permissions, audit trails
+- **Agent interoperability:** MCP tool servers and A2A agent-to-agent protocol across organisational boundaries
+- **Agent safety and governance:** prompt-injection defense, PII/PHI redaction, deny-by-default tool permissions, audit trails
 - **Data platforms:** enterprise warehouse migration (Teradata → BigQuery), lakehouse and pipeline design, data modelling, governance, and data readiness for AI
 - **ML & LLM platforms:** MLOps and LLMOps on Vertex AI, SageMaker and Bedrock, model migration, observability, containerized delivery
 
@@ -34,6 +35,16 @@ Business questions in plain English, answered through a governed semantic layer 
 - Execution-accuracy eval against hand-written reference SQL, 35 tests, CI on every pull request
 
 `LangGraph` `dbt` `BigQuery` `DuckDB` `sqlglot` `FastAPI`
+
+### [Prior Authorization Agents: MCP + A2A for Healthcare](https://github.com/kribalaji/prior-auth-agents)
+A provider's agent and a payer's agent settle a prior-authorization request end to end, with PHI protection at every boundary.
+- **MCP servers** (Python SDK 2.x): narrow, de-identified FHIR tools for minimum-necessary data, plus a payer policy server
+- **A2A 1.0** between organisations: agent card discovery, task lifecycle, and **multi-turn follow-up** when evidence is missing
+- **Deterministic rules engine** decides coverage. Unmet criteria go to a **human clinical-review queue**, never an automatic denial
+- **PHI controls**: keyed pseudonyms, age instead of birth date, and leak checks on every LLM prompt, LLM output and A2A message, plus an audit trail
+- 12 synthetic FHIR patients, 12/12 expected outcomes, 35 tests, CI on every pull request
+
+`MCP` `A2A` `LangGraph` `FHIR` `HIPAA-aware design` `FastAPI`
 
 ### [Crop Insurance Claims: Agentic AI Platform](https://github.com/kribalaji/crop-insurance-agent)
 A multi-agent system that assesses index-based crop-insurance claims end to end.
@@ -63,7 +74,7 @@ LangChain examples across Ollama, Gemini, Hugging Face, Cohere and Together AI: 
 
 ## 🛠️ Stack
 
-- **GenAI & agents:** LangGraph · LangChain · LlamaIndex · MCP · RAGAS · Gemini · Claude · Ollama · Hugging Face
+- **GenAI & agents:** LangGraph · LangChain · LlamaIndex · MCP · A2A · RAGAS · Gemini · Claude · Ollama · Hugging Face
 - **Retrieval:** ChromaDB · FAISS · embeddings · hybrid and advanced retrieval
 - **Backend:** Python · FastAPI · Streamlit · uv · pytest
 - **Data platform:** BigQuery · Teradata · AWS data services · SQL · Python data pipelines
